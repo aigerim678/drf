@@ -13,9 +13,11 @@ from .models import Women
 #         self.content = content
 
 class WomenSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Women
-        fields = '__all__'
+        fields = "__all__"
 
     
     # title = serializers.CharField(max_length=255)
